@@ -18,8 +18,8 @@ int main(void) {
 }
 
 /*swap: swap without using extra variable*/
-void swap(int *pa, int *pb) {
-	*pa = *pa + *pb;
-	*pb = *pa - *pb;
-	*pa = *pa - *pb;
+void swap(int *pa, int *pb) {		//pa = 54, pb = 61
+	*pa = *pa + *pb;				//pa = 54 + 61 = 116
+	*pb = *pa - *pb;				//pb = 116 - 61 = 54
+	*pa = *pa - *pb;				//pa = 116 - 54 = 61 swapped
 }

@@ -1,0 +1,52 @@
+Q] What is a typedef ?
+Q] What is the difference between a typedef and a #define ?
+Q] What is a volatile keyword, and why is it used in register access variables ?
+
+
+1. What is the purpose of the bitwise AND operator?
+The AND operator (&) returns 1 when both bits are 1; otherwise, it returns 0. It’s often used to check if a
+number is even or odd by performing n & 1.
+
+2. How can you check if a number is a power of two using bit manipulation?
+A number is a power of two if n & (n - 1) equals 0, and n > 0. This works because powers of two have only 
+one bit set to 1.
+
+3. What does the XOR operator do and how is it useful?
+XOR (^) returns 1 when the bits are different. It’s used to find the difference between two numbers, or 
+to toggle bits, such as swapping two numbers without a temporary variable.
+
+4. How can you count the number of 1's (set bits) in a number?
+You can use n & (n - 1) to repeatedly remove the rightmost set bit, and count the iterations. 
+This is a common trick to count set bits efficiently.
+
+5. What is the significance of the bitwise OR operator?
+The OR operator (|) returns 1 if at least one bit is 1. It's used to set specific bits in a number.
+
+6. How do you toggle a specific bit in a number?
+To toggle a bit, use XOR with a mask. For example, n ^= (1 << k) will toggle the k-th bit of n.
+
+7. What is the result of shifting a number to the left or right?
+Left shifting (<<) multiplies a number by powers of two, while right shifting (>>) divides it by powers 
+of two, with the right shift for signed numbers preserving the sign.
+
+8. What is the bitwise NOT operator and what does it do?
+The NOT operator (~) inverts all the bits of a number. It’s useful for flipping bits or calculating 
+the complement of a number.
+
+9. How would you swap two numbers using bitwise XOR?
+You can swap two numbers without a temporary variable by doing
+a = a ^ b
+b = a ^ b
+a = a ^ b
+
+10. How can you check if a number is even or odd using bit manipulation?
+To check if a number is odd, simply do n & 1. If the result is 1, the number is odd; if it’s 0, it’s even.
+
+11. How can you check if two numbers have opposite signs using bit manipulation?
+Two numbers have opposite signs if the sign bit differs. Check using the expression (a ^ b) < 0; 
+this will be true if a and b have different signs.
+
+12. How can you determine if a number is divisible by 3 using bit manipulation?
+A number is divisible by 3 if the difference between the count of set bits at odd and even positions is a 
+multiple of 3. This can be done efficiently with bit shifts and XOR operations.
+

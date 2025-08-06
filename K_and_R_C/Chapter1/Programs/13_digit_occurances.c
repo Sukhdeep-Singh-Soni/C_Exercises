@@ -3,7 +3,8 @@
  * 
  * since the character constants are small ints only/ ascii values, we can do arithmatic operation with them if c='0' then '0'-'0'=>0x48-0x48=0
  * */
-
+/* if input is under ascii range of digits */
+ /* clearing every element of arrary */
 #include <stdio.h>
 
 main() {
@@ -12,15 +13,16 @@ main() {
 
   nwhite = nother = 0;
   for (i = 0; i < 10; ++i)
-    ndigit[i] = 0; /* clearing every element of arrary */
+    ndigit[i] = 0;
 
-  while ((c = getchar()) != EOF)
-    if (c >= '0' && c <= '9') 				/* if input is under ascii range of digits */
-      ++ndigit[c - '0']; 
+  while ((c = getchar()) != EOF) {
+    if (c >= '0' && c <= '9') 			
+      ++ndigit[c-'0']; 	
     else if (c == ' ' || c == '\n' || c == '\t')
       ++nwhite;
     else
       ++nother;
+  }
 
   printf("digits =");
   for (i = 0; i < 10; ++i)

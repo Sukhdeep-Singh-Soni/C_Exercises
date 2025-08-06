@@ -14,14 +14,13 @@ main() {
   for (i = 0; i < 10; ++i)
     ndigit[i] = 0; /* clearing every element of arrary */
 
-  while ((c = getchar()) != EOF) {
+  while ((c = getchar()) != EOF)
     if (c >= '0' && c <= '9') 				/* if input is under ascii range of digits */
       ++ndigit[c - '0']; 
     else if (c == ' ' || c == '\n' || c == '\t')
       ++nwhite;
     else
       ++nother;
-  }
 
   printf("digits =");
   for (i = 0; i < 10; ++i)

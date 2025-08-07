@@ -1585,6 +1585,82 @@ If T1 is blocked, it runs T2 and T3 using round-robin, since they have the same 
 ✅ Summary Line for Interview:
 "In priority-based round-robin scheduling, priority ensures responsiveness to critical tasks, and round-robin ensures fairness among tasks of the same priority."
 
+
+#################################################################################
+/* L&T interview */
+#include <stdio.h>
+
+// 32-bit (structure padding question)
+struct name {
+  char name;  //0x00 (3 bytes padded)
+  int id;     // 0x04
+};
+
+/* structure bit fields questions */
+struct flags {
+    uint8_t fl1 :1;    
+};
+
+//struct name *sp1;
+
+void sort(int *arr, int size);
+int main()
+{
+    struct name n1, *sp1 = NULL; /* assigning NULL to a pointer question */
+    sp1 = &n1;
+    
+    sp1->name = 'c'; /* structure member access using a pointer to that structure question */
+    sp1->id = 324;
+    
+    
+    int a = 20;
+    const int b = 30; /* difference between int a, const int a */
+    int c = 90;
+    int *ptr = &a;
+    const int *ptr1 = &b; /* pointer to const int variable question */
+    int *const ptr2 = &c; /* constant pointer to int question */
+    
+    int const *const ptr3; /* constant pointer to cosnatant int question */
+    
+    *ptr = 40;
+    //*ptr1 = 56;
+    *ptr2 = 67;
+    //ptr2 = &b;
+    
+    
+    printf("%d %d\n", *ptr, *ptr1);
+    
+    
+    
+    int arr[6] = {12, 3, 45, 6, 8, 12};
+    sort(arr, 6); /* making sort prog dynamic by passing array and its size via a function */
+    return 0;
+}
+
+void sort(int *arr, int size) {
+    /* sort in ascending / descending question */
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (arr[i] > arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    for (int i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+}
+asked questions :
+a) What is a volatile keyword and why it is used for?
+b) What are the storage class specifiers in C ?
+c) C memory segments ?
+d) What is a .map file and what does it contains ?
+e) Questions based on Asset Tracking System Project ?
+f) What is UWB Technology ?
+g) What protocol used for distance communication between Anchor and Tag ?
+#################################################################################
 87.
 
 

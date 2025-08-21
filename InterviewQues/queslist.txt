@@ -1,0 +1,20 @@
+1] What is the difference between interrupts and polling in embedded systems?
+2] How do you reduce memory usage in Embedded C programs?
+3] malloc() vs calloc() - when would you use one over the other in embedded firmware?
+4] How do you handle memory fragmentation in long-running embedded applications?
+5] What is DMA(Direct memory access) and how it is used in embedded c?
+6] How do you optimize an embedded system for performance for real time constraints?
+7] What are inline functions and why are they used in embedded code?
+8] How does memory mapped I/O work and where do you apply it?
+9] How would you implement UART communication in full-duplex mode?
+10] How do you configure and use and SPI interface in Embedded C?
+11] What is bit-banging and how its is applied in I2C/SPI protocols?
+12] How do you implement a circular buffer in UART communication?
+13] Explain the role on an RTOS in embedded systems?
+14] How would you implement real-time scheduling in an embedded system?
+15] What is a context switch and what overhead does it introduce?
+16] How do you handle concurrency and synchronization safely?
+17] How do you manage stack overflow or buffer overflow in embedded systems?
+18] How do you handle exceptions and error recovery in real-time syatems?
+19] What is the purpose of a bootloader and how would you implement one?
+20] How do you manage flash memory wear leveling in embedded systems?

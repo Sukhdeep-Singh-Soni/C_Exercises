@@ -1,0 +1,84 @@
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+ 
+Example 1:
+Input: s = "()"
+Output: true
+
+Example 2:
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+Input: s = "([])"
+Output: true
+
+Example 4:
+Input: s = "([)]"
+Output: false
+
+Example 5:
+Input: s = "([{)}]"
+Output: false
+
+Constraints:
+
+1 <= s.length <= 100
+s consists of parentheses only '()[]{}'.
+==========================================================================
+
+Algorithm:
+
+#define STACK_SIZE  100
+
+int main() {
+  char stack[STACK_SIZE];
+  int stackp = -1;
+  int i;
+  char val;
+
+  i = 0;
+  while (s[i] != '\0') {
+    if (s[i] == '(') {
+        push('(');
+    } else if (s[i] == '{') {
+        push('{');
+    } else if(s[i] == '['){
+        push('[');
+    }
+
+    if(s[i] == ')') {
+      val = pop();
+      if (val != '(')
+        return false;
+    } else if(s[i] == '}') {
+        val = pop();
+        if (val != '{')
+          return false;
+    } else if(s[i] == ']') {
+        val = pop();
+        if (val != '[')
+            return false;
+    }
+  } //end while
+  return true;
+} //end main
+
+void push(char val) {
+	if (stackp >= STACK_SIZE)
+  		printf("ERROR: stack full\n");
+  else
+  		stack[++stackp] = val;
+}
+
+char pop(void) {
+  if (stackp < 0)
+  	printf("ERROR: stack empty\n");
+  else
+  	return stack[stackp--];
+}
+
